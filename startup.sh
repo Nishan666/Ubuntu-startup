@@ -271,6 +271,7 @@ mkdir 7edge personal-pro nick-test
 sudo apt update
 sudo apt upgrade -y
 sudo rm /etc/apt/sources.list.d/mongodb-org-*.list
+rm -rf startup.sh
 
 
 #final Part $$$$$NOTES$$$$
