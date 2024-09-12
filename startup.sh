@@ -61,9 +61,10 @@ setup_ssh=false
 if [ -z "$(ls -A ~/.ssh 2>/dev/null)" ]; then
   # Execute the code below if the directory is empty or does not exist
   echo "The ~/.ssh directory is empty or does not exist. Running the code below..."
-  yes "" | ssh-keygen -t ed25519_nishan666 -C "nishankumar559@gmail.com"
-  yes "" | ssh-keygen -t ed25519_jackxdot911 -C "jackxdotedge@gmail.com"
-  yes "" | ssh-keygen -t rsa -b 4096 -C "nishan.kumar@7edge.com"
+  yes "" | ssh-keygen -t ed25519 -C "nishankumar559@gmail.com" -f ~/.ssh/id_ed25519_nishan666
+  yes "" | ssh-keygen -t ed25519 -C "jackxdotedge@gmail.com" -f ~/.ssh/id_ed25519_jackxdot911
+  yes "" | ssh-keygen -t rsa -b 4096 -C "nishan.kumar@7edge.com" -f ~/.ssh/id_rsa
+
 
   eval "$(ssh-agent -s)"
 
