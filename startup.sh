@@ -39,11 +39,11 @@ nvm alias default v22.8.0
 
 
 #postgress
-sudo apt install postgresql postgresql-contrib
+sudo apt install -y postgresql postgresql-contrib
 sudo -i -u postgres
 
 #mongodb
-sudo apt-get install gnupg curl
+sudo apt install -y gnupg curl
 
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
