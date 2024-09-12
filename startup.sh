@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd  
+cd ~/
 
 #Basic Update
 sudo apt update
@@ -162,7 +162,7 @@ curl -fLo "MesloLGS NF Bold.ttf" https://github.com/romkatv/powerlevel10k-media/
 curl -fLo "MesloLGS NF Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 curl -fLo "MesloLGS NF Bold Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 # Go back to the home directory
-cd
+cd ~/
 # Refresh font cache
 echo "Refreshing font cache..."
 fc-cache -f -v
@@ -230,7 +230,7 @@ echo "Configuring Zsh plugins and aliases..."
 
 # Set up Powerlevel10k configuration
 echo "Setting up Powerlevel10k configuration..."
-cd 
+cd ~/
 wget -O ~/.p10k.zsh https://raw.githubusercontent.com/Nishan666/Ubuntu-startup/main/.p10k.zsh
 cat ~/.p10k.zsh
 
@@ -240,7 +240,7 @@ echo "source ~/.p10k.zsh" >> ~/.zshrc
 
 # Clean up setup files
 echo "Cleaning up setup files..."
-cd
+cd ~/
 rm -rf ~/zsh-setup
 
 # Apply changes to current session
@@ -273,7 +273,8 @@ mkdir 7edge personal-pro nick-test
 sudo apt update
 sudo apt upgrade -y
 sudo rm /etc/apt/sources.list.d/mongodb-org-*.list
-cd && rm -rf startup.sh
+cd ~/
+rm -rf startup.sh
 
 #final Part $$$$$NOTES$$$$
 echo "NOTES"
