@@ -104,7 +104,7 @@ fi
 
 #install chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
 sudo apt -f install
 rm -rf google-chrome-stable_current_amd64.deb
 
