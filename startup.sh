@@ -112,20 +112,6 @@ rm -rf google-chrome-stable_current_amd64.deb
 #ZSH setup
 sudo apt update
 
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-if [ -n "$ZSH_VERSION" ]; then
-    # zsh is detected
-    source ~/.zshrc
-else
-    # bash or other shell
-    source ~/.bashrc
-fi
-nvm install v22.8.0
-nvm alias default v22.8.0
-
 # Update and install Zsh and required packages
 echo "Installing Zsh and required packages..."
 sudo apt update -y
