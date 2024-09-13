@@ -39,11 +39,11 @@ nvm alias default v22.8.0
 
 
 #postgress
-sudo apt install postgresql postgresql-contrib
+sudo apt install -y postgresql postgresql-contrib
 sudo -i -u postgres
 
 #mongodb
-sudo apt-get install gnupg curl
+sudo apt install -y gnupg curl
 
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
@@ -61,9 +61,10 @@ setup_ssh=false
 if [ -z "$(ls -A ~/.ssh 2>/dev/null)" ]; then
   # Execute the code below if the directory is empty or does not exist
   echo "The ~/.ssh directory is empty or does not exist. Running the code below..."
-  yes "" | ssh-keygen -t ed25519_nishan666 -C "nishankumar559@gmail.com"
-  yes "" | ssh-keygen -t ed25519_jackxdot911 -C "jackxdotedge@gmail.com"
-  yes "" | ssh-keygen -t rsa -b 4096 -C "nishan.kumar@7edge.com"
+  echo "Let's use the -N "" option with ssh-keygen to set an empty passphrase directly, avoiding the use of yes"
+  ssh-keygen -q -t ed25519 -C "nishankumar559@gmail.com" -f ~/.ssh/id_ed25519_nishan666 -N ""
+  ssh-keygen -q -t ed25519 -C "jackxdotedge@gmail.com" -f ~/.ssh/id_ed25519_jackxdot911 -N ""
+  ssh-keygen -q -t rsa -b 4096 -C "nishan.kumar@7edge.com" -f ~/.ssh/id_rsa -N ""
 
   eval "$(ssh-agent -s)"
 
@@ -104,27 +105,13 @@ fi
 
 #install chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
 sudo apt -f install
 rm -rf google-chrome-stable_current_amd64.deb
 
 
 #ZSH setup
 sudo apt update
-
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-if [ -n "$ZSH_VERSION" ]; then
-    # zsh is detected
-    source ~/.zshrc
-else
-    # bash or other shell
-    source ~/.bashrc
-fi
-nvm install v22.8.0
-nvm alias default v22.8.0
 
 # Update and install Zsh and required packages
 echo "Installing Zsh and required packages..."
