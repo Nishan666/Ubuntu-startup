@@ -250,8 +250,22 @@ source ~/.zshrc
 
 echo "Zsh setup complete! Please restart your terminal or open a new terminal session to apply changes."
 
+#aws cli and sam cli
+cd ~/
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+cd ~/
+wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+sudo ./sam-installation/install
+
+cd ~/
+rm -rf aws-sam-cli-linux-x86_64.zip sam-installation awscliv2.zip aws 
+
 #basic folders
-mkdir 7edge personal-pro nick-test
+mkdir 7edge personal-pro nick-test aws react react-native
 
 
 
