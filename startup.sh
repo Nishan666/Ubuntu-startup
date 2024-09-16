@@ -40,7 +40,11 @@ nvm alias default v22.8.0
 
 #postgress
 sudo apt install -y postgresql postgresql-contrib
-sudo -i -u postgres
+
+#ssh install
+sudo apt install openssh-server
+sudo systemctl disable ssh
+
 
 #mongodb
 sudo apt install -y gnupg curl
